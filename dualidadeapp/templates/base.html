@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>{% block title %}dualidadeapp{% endblock title %}</title>
+</head>
+<body>
+<!-- INICIO: Bloco do Bootstrap a ser incluido -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">dualidadeapp</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExample05">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown05">
+                    <a class="dropdown-item" href="#">Clientes</a>
+                    <a class="dropdown-item" href="#">Pedidos</a>
+                    <a class="dropdown-item" href="#">Produtos</a>
+                    <a class="dropdown-item" href="#">Categorias</a>
+                    <a class="dropdown-item" href="#">Redes Sociais</a>
+                </div>
+            </li>
+        </ul>
+        <form action="#" method="GET" class="form-inline my-2 my-md-0" style="margin-right: 10px">
+            <input class="form-control" name="query" type="text" aria-label="Buscar" style="margin-right: 10px">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nome de usuario</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown05">
+                        <a class="dropdown-item" href="#">Trocar senha</a>
+                        <a class="dropdown-item" href="#">Conta</a>                            
+                        <a class="dropdown-item" href="#">Sair</a>
+                    </div>
+                </li>
+            </ul>
+    </div>
+</nav>
+<!-- FIM: Bloco do Bootstrap a ser incluido -->
+    {% block body %}
+    
+    {% endblock body %}
+    
+    <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery.mask.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
