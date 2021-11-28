@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+
+    Adicionar demanda - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        <br />
+    <h5><b>Cadastro de demanda</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                   <label for="{{ form.title.id_for_label }}">Titulo</label>
+                   {{ form.title|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.description.id_for_label }}">Descricao</label>
+                    {{ form.description|add_class:"form-control" }}
+                 </div>
+                <div class="form-group">
+                    <label for="{{ form.deadline.id_for_label }}">Prazo Final</label>
+                    {{ form.deadline|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                  <label for="{{ form.type.id_for_label }}">Tipo</label>
+                  {{ form.type|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.status.id_for_label }}">Status</label>
+                    {{ form.status|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                   <label for="{{ form.repository.id_for_label }}">Repositorio</label>
+                   {{ form.repository|add_class:"form-control" }}
+                </div>
+                    <button type="submit" class="btn btn-primary">Salvar</button>       
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
