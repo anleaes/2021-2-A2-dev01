@@ -1,0 +1,32 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ReviewApp login</title>
+  <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+  <link rel="stylesheet" href="{% static 'css/signin.css' %}" >
+</head>
+<body class="text-center">
+
+  <form class="form-signin" action="" method="POST">
+  {% csrf_token %}
+    <h1 class="h3 mb-3 font-weight-normal">Identifique-se</h1>
+    <label for="username" class="sr-only">Usuario</label>
+    <input type="text" id="username" name="username" class="form-control" placeholder="Nome de usuario" required autofocus>
+    <label for="password" class="sr-only">Senha</label>
+    <input type="password" id="password" name="password" class="form-control" placeholder="Digite sua senha" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+    <br />
+    <a href="{% url 'accounts:add_user' %}">Criar uma conta</a>
+  </form>
+
+  <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery-ui.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
