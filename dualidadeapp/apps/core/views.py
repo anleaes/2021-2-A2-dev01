@@ -1,9 +1,14 @@
-from django.shortcuts import render
-from demands.views import list_demands
+from django.shortcuts import render, get_object_or_404, redirect
+from demands.forms import DemandForm
+from demands.models import Demand
 
 # Create your views here.
 
-def home(request):
-    template_name ='core/home.html'
-    context = {}
+
+def list_demands(request):
+    template_name = 'demands/list_demands.html'
+    demands = Demand.objects.filter()
+    context = {
+        'demands': demands
+    }
     return render(request, template_name, context)
